@@ -10,9 +10,18 @@ describe 'ship' do
 	
 	end
 
-  it 'should take hit' do
-    expect(ship).to recieve(:hit)
+  it 'should recieve hit' do
+  	
+    expect(ship).to receive(:hit).and_return(2)
+    ship.hit
+ 
   end  
+
+	it 'should be floating' do
+		
+		expect(ship).to be_floating
+
+	end
 end
 
 
