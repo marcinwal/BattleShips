@@ -11,5 +11,9 @@ class Ship
 		@allowed_hits -= 1
   end
 
+  def floating?
+    @allowed_hits > 0
+  end
+
 
 end
