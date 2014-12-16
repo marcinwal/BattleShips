@@ -1,12 +1,16 @@
 class Board
 
-	attr_reader :
+
+	attr_reader :table
+
 	
-	def initialize
+	def initialize(cell, size: size)
 		@table = {}
-		(:a..:m).each { |c| @table[c] = Array.new(10,Cell.new) }
+		(1..size).each { |c| @table[c] = Array.new(size) {cell} }
 	end
 
+  def load_ship(ship: ship)
+  end  
 	
 
 end
