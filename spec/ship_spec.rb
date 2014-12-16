@@ -9,6 +9,10 @@ describe 'ship' do
 		expect(ship.length).to eq(3)
 	
 	end
+
+  it 'should take hit' do
+    expect(ship).to recieve(:hit)
+  end  
 end
 
 
