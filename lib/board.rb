@@ -1,6 +1,6 @@
 class Board
 
-	attr_reader :table
+	attr_reader :
 	
 	def initialize
 		@table = {}
