@@ -4,6 +4,7 @@ require 'ship'
 describe 'cell' do
 
 	let(:cell) {Cell.new}
+  let(:ship) {Ship.new(length: 2)}
 		
 	it 'should be able to be shot at' do
 		
@@ -12,8 +13,10 @@ describe 'cell' do
 
 	end
 
-	it 'should store the object' do 
 
+	it 'should store the object' do 
+    cell.load(ship)
+    expect(cell.ship).to eq(ship)
 	end
 
 
