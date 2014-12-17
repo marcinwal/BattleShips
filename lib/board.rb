@@ -4,7 +4,7 @@ class Board
 
 
 	attr_reader :table
-	attr_writer :table
+	# attr_writer :table
 
 	DEFAULT_SIZE = 10
 

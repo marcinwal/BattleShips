@@ -2,7 +2,7 @@ class Ship
 
   attr_reader :length, :allowed_hits
 
-  SHIPS = {aircraft: 5,battleship: 4, submarine: 3, destroyer: 3,patrol: 2 }
+  SHIPS = {aircraft: 5,battleship: 4, destroyer: 3,patrol: 2, submarine: 1 }
 
   def initialize(length)
     @length = length

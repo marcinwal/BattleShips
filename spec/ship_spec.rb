@@ -23,7 +23,7 @@ describe 'ship' do
 	end
 
   it 'should define the submarine' do
-    expect(Ship.submarine.length).to eq(3) 
+    expect(Ship.submarine.length).to eq(1) 
   end
 end
 
