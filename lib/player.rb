@@ -3,6 +3,9 @@ class Player
 
   INITIAL_SHIPS = {aircraft: 1, battleship: 1, destroyer: 1,patrol: 2, submarine: 2}
 
+  attr_reader :player_ships
+  attr_reader :board  
+
 	def initialize
 		@player_ships = []
 
@@ -21,13 +24,14 @@ class Player
 	end
 
   def read_input(string)
-    l =  /[a..j]/i.match(string)
+    l =  /[a-j]/i.match(string)
     n =  /\d+/.match(string)
     #to raise errors if not correct
-    return l[0].upcase.ord - 'A'.ord, n[0].to_i
+    raise "wrong coordinates" if (l == nil) or (n == nil)
+    return l[0].upcase.ord - 'A'.ord, n[0].to_i - 1
   end  
 
-  def place_ship(ship,start_cell: input,dir: oriantation)
+  def place_ship(ship: ship,start_cell: start_cell,dir: oriantation)
     x_coord, y_coord = read_input(start_cell)
     x2_coord = dir=='H' ? x_coord + ship.length - 1 : x_coord
     y2_coord = dir=='V' ? y_coord + ship.length - 1 : y_coord

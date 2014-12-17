@@ -6,7 +6,7 @@ class Board
 	attr_reader :table
 	# attr_writer :table
 
-	DEFAULT_SIZE = 10
+	DEFAULT_SIZE = 5
 
 	def initialize(cell,size: size1 = DEFAULT_SIZE)
 		@table = []
