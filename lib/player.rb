@@ -23,7 +23,7 @@ class Player
     l =  /[a..j]/i.match(string)
     n =  /\d+/.match(string)
     #to raise errors if not correct
-    return l[0].upcase.ord - 'A'.ord, n[0].to_i
+    return l[0].upcase.ord - 'A'.ord, n[0].to_i - 1
   end  
 
   def place_ship(ship,start_cell: input,dir: oriantation)
