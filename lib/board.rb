@@ -14,10 +14,7 @@ class Board
 	end
 
   def load_ship(ship: ship,location: location)
-	  x1 = location[0]
-	  y1 = location[1]
-		x2 = location[2]
-		y2 = location[3]
+	  x1, y1, x2, y2 = location
 # byebug
 		if x1 == x2
 			 raise "coordinates do not match a ship lenght" if (y2 - y1) + 1 != ship.length
