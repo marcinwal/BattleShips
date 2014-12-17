@@ -37,6 +37,8 @@ class Board
 		
   end
 	
+	def shoot
+	end
 
 end
 
