@@ -5,7 +5,7 @@ INITIAL_SHIPS = {aircraft: 1, battleship: 1, destroyer: 1,patrol: 2, submarine: 
 
 	def initialize
 		@player_ships = []
-		@board = Board.new
+		# @board = Board.new
 		create_ships
 	end
 

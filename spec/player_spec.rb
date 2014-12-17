@@ -1,4 +1,5 @@
 require 'player'
+require 'ship'
 
 describe 'player' do 
 
