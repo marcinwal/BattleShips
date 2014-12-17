@@ -21,15 +21,15 @@ class Player
 
   def read_input(string)
     l =  /[a..j]/i.match(string)
-    n =  /\d+/match(string)
+    n =  /\d+/.match(string)
     #to raise errors if not correct
-    return l[0].upcase.ord - 'A',n[0].to_i
+    return l[0].upcase.ord - 'A'.ord, n[0].to_i
   end  
 
   def place_ship(ship,start_cell: input,dir: oriantation)
-    x_coord, y_coord = read_input(input)
-    x2_coord = dir=='H' ? x_coord + ship.length : x_coord
-    y2_coord = dir=='V' ? y_coord + ship.length : y_coord
+    x_coord, y_coord = read_input(start_cell)
+    x2_coord = dir=='H' ? x_coord + ship.length - 1 : x_coord
+    y2_coord = dir=='V' ? y_coord + ship.length - 1 : y_coord
     location =[x_coord, y_coord, x2_coord, y2_coord]
     @board.load_ship(ship: ship,location: location)
   end  
