@@ -2,12 +2,11 @@ require 'ship'
 
 describe 'ship' do 
 
-	let(:ship) {Ship.new(length: 3)}
+	let(:ship) {Ship.new(3)}
 
 	it 'should have a length' do
-
-		expect(ship.length).to eq(3)
-	
+    l = ship.length
+		expect(l).to eq(3)
 	end
 
   it 'should recieve hit' do
@@ -22,6 +21,10 @@ describe 'ship' do
 		expect(ship).to be_floating
 
 	end
+
+  it 'should define the submarine' do
+    expect(Ship.submarine.length).to eq(3) 
+  end
 end
 
 

@@ -2,7 +2,9 @@ class Ship
 
   attr_reader :length, :allowed_hits
 
-  def initialize(length: length)
+  SHIPS = {aircraft: 5,battleship: 4, submarine: 3, destroyer: 3,patrol: 2 }
+
+  def initialize(length)
     @length = length
     @allowed_hits = length
   end
@@ -15,5 +17,12 @@ class Ship
     @allowed_hits > 0
   end
 
+  def size(length)
+    @length = length
+  end  
 
+  def self.method_missing name,*args
+      return new SHIPS[name] if SHIPS[name]
+      super
+  end    
 end

@@ -21,10 +21,10 @@ class Board
 		y2 = location[3]
 # byebug
 		if x1 == x2
-			 raise "coordinates do not match a ship lenght" if (y2 - y1) != ship.length
+			 raise "coordinates do not match a ship lenght" if (y2 - y1) + 1 != ship.length
 	  	(y1..y2).each {|y| @table[x1][y].load(ship) }
 		elsif y1 == y2
-			raise "coordinates do not match a ship lenght" if (x2 - x1) != ship.length
+			raise "coordinates do not match a ship lenght" if (x2 - x1) + 1 != ship.length
 			(x1..x2).each {|x| @table[x][y1].load(ship) }
 		else
 			raise "stupid coordinates"
