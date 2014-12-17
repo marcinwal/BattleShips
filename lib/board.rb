@@ -8,7 +8,7 @@ class Board
 
 	DEFAULT_SIZE = 10
 
-	def initialize(cell,size: size = DEFAULT_SIZE)
+	def initialize(cell,size: size1 = DEFAULT_SIZE)
 		@table = []
 		(0...size).each { |c| @table[c] = Array.new(size) {Cell.new} }
 	end

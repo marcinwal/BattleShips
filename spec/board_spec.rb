@@ -6,7 +6,7 @@ describe 'board' do
 
 
 let(:cell) {Cell.new}	
-let(:board) {Board.new(Cell,size: 10)}	
+let(:board) {Board.new(Cell)}	
 
 let(:fake_ship){double(:ghost_ship,length: 2) }
 
