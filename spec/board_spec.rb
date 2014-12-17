@@ -8,7 +8,7 @@ describe 'board' do
 let(:cell) {Cell.new}	
 let(:board) {Board.new(Cell,size: 10)}	
 
-let(:fake_ship){double(:ghost_ship) }
+let(:fake_ship){double(:ghost_ship,length: 2) }
 
 	it 'should have a board' do
 		
@@ -22,6 +22,11 @@ let(:fake_ship){double(:ghost_ship) }
 	board.load_ship(ship: fake_ship, location: location)
 	expect(board.table[1][1]).not_to be_shot
 
+  end
+
+  it 'should raise an error when ship too long' do
+    location = [1,1,7,1] 
+    expect(lambda{board.load_ship(ship: fake_ship,location: location)}).to raise_error(RuntimeError,'coordinates do not match a ship lenght')
   end
 
 
