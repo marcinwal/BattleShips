@@ -32,10 +32,10 @@ Ships can:
         be placed vertically or horizontally
 
 to_do list
-         exclude overlapping of the ships 
-         move the module and coordinate data for ships down to the board
-         while loop to iterate through placing the ships
-         a.i / smart player.
+       -  exclude overlapping of the ships 
+       - move the module and coordinate data for ships down to the board
+       - while loop to iterate through placing the ships
+       - a.i / smart player.
          
          
 
