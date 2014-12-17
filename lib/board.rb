@@ -14,7 +14,6 @@ class Board
 	end
 
   def load_ship(ship: ship,location: location)
-
 	  x1 = location[0]
 	  y1 = location[1]
 		x2 = location[2]
@@ -37,6 +36,8 @@ class Board
 		
   end
 	
+	def shoot
+	end
 
 end
 
