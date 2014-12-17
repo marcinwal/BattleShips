@@ -29,5 +29,11 @@ let(:fake_ship){double(:ghost_ship,length: 2) }
     expect(lambda{board.load_ship(ship: fake_ship,location: location)}).to raise_error(RuntimeError,'coordinates do not match a ship lenght')
   end
 
+	it 'should shoot a cell' do
+		board.shoot(1,1)
+		expect(board.table[1][1]).to be_shot
+	end
+
+
 
 end

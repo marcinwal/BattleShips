@@ -25,4 +25,8 @@ class Ship
       return new SHIPS[name] if SHIPS[name]
       super
   end    
+
+  def sink!
+  	@allowed_hits = 0
+	end
 end

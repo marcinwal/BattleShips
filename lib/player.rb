@@ -1,16 +1,17 @@
+require 'coord_to_array'
 
 class Player
-
   INITIAL_SHIPS = {aircraft: 1, battleship: 1, destroyer: 1,patrol: 2, submarine: 2}
+	
+	include Coord_to_array
 
   attr_reader :player_ships
   attr_reader :board  
 
 	def initialize
 		@player_ships = []
-
 		@board = Board.new(Cell)
-
+		create_ships
 	end
 
 	def create_ships
@@ -21,15 +22,7 @@ class Player
 
 	def ship_count
 		@player_ships.count
-	end
-
-  def read_input(string)
-    l =  /[a-j]/i.match(string)
-    n =  /\d+/.match(string)
-    #to raise errors if not correct
-    raise "wrong coordinates" if (l == nil) or (n == nil)
-    return l[0].upcase.ord - 'A'.ord, n[0].to_i - 1
-  end  
+	end  
 
   def place_ship(ship: ship,start_cell: start_cell,dir: oriantation)
     x_coord, y_coord = read_input(start_cell)
@@ -40,7 +33,12 @@ class Player
   end  
 
   def shoot(input) #it shoots A2 given as the string
+		x,y = read_input(input)
+		@board.shoot(x,y)
+  end
 
+  def ships_sunk?
+		@player_ships.all? {|ship| !ship.floating?}
   end
 
 end

@@ -28,15 +28,10 @@ class Board
 		else
 			raise "stupid coordinates"
 		end
-
-
   end  
-
-  def load_ship_in(ship)
-		
-  end
 	
-	def shoot
+	def shoot(x,y)
+		table[x][y].shoot_at 
 	end
 
 end
