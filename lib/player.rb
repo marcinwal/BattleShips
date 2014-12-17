@@ -2,7 +2,6 @@
 class Player
 
 INITIAL_SHIPS = {aircraft: 1, battleship: 1, destroyer: 1,patrol: 2, submarine: 2}
-								{aircraft: 5,battleship: 4, destroyer: 3,patrol: 2, submarine: 1}
 
 	def initialize
 		@player_ships = []
