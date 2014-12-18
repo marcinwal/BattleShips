@@ -8,10 +8,13 @@ class AIplayer < Player
   end
 
   def place_ai_ships
+
+     self.board.place_ship(ship: @player_ships[6],start_cell: 'a1', dir: 'H')
+   
   end  
 
-  def shootai
-    return rand(self.board.size),rand(self.board.size)
+  def random_cell
+    return (rand(self.board.size) + 'A'.ord ).chr ,rand(self.board.size) + 1
   end
 
 end
