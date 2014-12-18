@@ -10,7 +10,7 @@ attr_reader :table
 	include Coord_to_array
 	include Errors
 
-	DEFAULT_SIZE = 5
+	DEFAULT_SIZE = 3
 
 	def initialize(cell,size: size1 = DEFAULT_SIZE)
 		@table = []
@@ -40,10 +40,14 @@ attr_reader :table
 # byebug
 		if x1 == x2
 			 error("coordinates do not match a ship lenght") if (y2 - y1) + 1 != ship.length
-	  	(y1..y2).each {|y| @table[x1][y].load(ship) }
+	  	(y1..y2).each do |y| 
+	  		@table[x1][y].load(ship) if check_cell(x1,y)
+	  	end
 		elsif y1 == y2
 			error("coordinates do not match a ship lenght") if (x2 - x1) + 1 != ship.length
-			(x1..x2).each {|x| @table[x][y1].load(ship) }
+			(x1..x2).each do |x| 
+				@table[x][y1].load(ship) if check_cell(x,y1)
+			end
 		else
 			error("stupid coordinates")
 		end

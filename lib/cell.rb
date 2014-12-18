@@ -9,7 +9,7 @@ class Cell
 
 	def shoot_at #shot controll and the gamee engine level
     @shot = true
-    if @ship != nil then @ship.hit end 
+    if (@ship != nil && @ship.floating?) then @ship.hit end   
 	end
 
 	def shot?

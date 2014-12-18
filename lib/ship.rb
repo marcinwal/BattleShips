@@ -11,6 +11,7 @@ class Ship
 
   def hit
 		@allowed_hits -= 1
+    return 'sunk' unless floating?
   end
 
   def floating?
