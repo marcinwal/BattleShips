@@ -32,7 +32,7 @@ attr_reader :table
 
   def check_cell x, y
   	error('ship is already there') if @table[x][y].ship != nil
-		
+  	@table[x][y].ship != nil ? false : true
   end
 
   def load_ship(ship: ship,location: location)

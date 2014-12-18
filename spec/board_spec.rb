@@ -45,5 +45,8 @@ let(:different_ship){double(:different_ship,length: 2) }
 		expect{board.place_ship(ship: different_ship,start_cell: 'a1',dir: 'H')}.to raise_error(RuntimeError, 'ship is already there')
 	end
 
+  it "should retrun true if no ship in a cell" do
+    expect(board.check_cell(0,0)).to eq(true)
+  end  
 
 end
