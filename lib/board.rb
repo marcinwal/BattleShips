@@ -1,10 +1,10 @@
 # require 'byebug'
-require 'coord_to_array'
-require 'errors'
+require_relative 'coord_to_array'
+require_relative 'errors'
 
 class Board
 
-	attr_reader :table
+attr_reader :table
 	# attr_writer :table
 
 	include Coord_to_array

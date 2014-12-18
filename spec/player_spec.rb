@@ -10,10 +10,7 @@ let(:ship) {double(:ship,length: 3)}
 		expect(player.ship_count).to eq(7)
 	end
 
-  it 'should place a ship on players board' do
-    player.place_ship(ship: ship,start_cell: "A2", dir: 'H')
-    expect(player.board.table[0][1].ship).to eq(ship)
-  end  
+  
 
     it 'should test a string and return 0,10' do
 
