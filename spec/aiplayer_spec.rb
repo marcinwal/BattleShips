@@ -14,7 +14,7 @@ describe 'aiplayer' do
   end
 
   it 'should place the 5th ship' do 
-    aiplayer.place_ai_ships  
+    #aiplayer.place_ai_ships  
     expect(aiplayer.board.table[0][0].ship).to eq(aiplayer.player_ships[6])
   end
   

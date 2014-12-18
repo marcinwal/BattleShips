@@ -9,7 +9,7 @@ class AIplayer < Player
 
   def place_ai_ships
 
-     self.board.place_ship(ship: @player_ships[6],start_cell: 'a1', dir: 'H')
+     self.board.place_ship(ship: self.player_ships[6],start_cell: 'a1', dir: 'H')
    
   end  
 
