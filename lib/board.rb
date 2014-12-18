@@ -4,7 +4,7 @@ require_relative 'errors'
 
 class Board
 
-attr_reader :table
+attr_reader :table, :size
 	# attr_writer :table
 
 	include Coord_to_array
@@ -15,6 +15,7 @@ attr_reader :table
 	def initialize(cell,size: size1 = DEFAULT_SIZE)
 		@table = []
 		(0...size).each { |c| @table[c] = Array.new(size) {Cell.new} }
+		@size = size
 	end
 
 	test = Proc.new { (y1..y2).each {|y| @table[x1][y].load(ship) } }
@@ -53,9 +54,8 @@ attr_reader :table
 		end
   end  
 
-	
 	def shoot(x,y)
-		table[x][y].shoot_at 
+		table[x][y].shoot_at	
 	end
 
 end
